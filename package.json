@@ -1,0 +1,19 @@
+{
+  "name": "activity-tracker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "prettier": "^3.8.3",
+    "prettier-plugin-java": "^2.9.7"
+  }
+}

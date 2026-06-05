@@ -1,0 +1,27 @@
+-- Inserimento utenti
+INSERT INTO users (username, password, full_name) VALUES
+('mario', '{noop}password', 'Mario Rossi'),
+('anna', '{noop}password', 'Anna Bianchi');
+
+-- Inserimento task
+INSERT INTO tasks (title, description, status, created_by) VALUES
+('Task 1', 'Primo task di esempio', 'BACKLOG', 1),
+('Task 2', 'Secondo task', 'IN_PROGRESS', 1),
+('Task 3', 'Task completato', 'COMPLETED', 2);
+
+-- Assegnazioni
+INSERT INTO task_assignees (task_id, user_id) VALUES
+(1, 1),
+(2, 1),
+(2, 2),
+(3, 2);
+
+-- Ore lavorate
+INSERT INTO work_logs (hours, task_id, user_id) VALUES
+(2.5, 2, 1),
+(1.0, 3, 2);
+
+-- Commenti
+INSERT INTO comments (text, created_at, task_id, user_id) VALUES
+('Iniziato sviluppo', CURRENT_TIMESTAMP(), 2, 1),
+('Completato con successo', CURRENT_TIMESTAMP(), 3, 2);

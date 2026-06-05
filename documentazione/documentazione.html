@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-06-04 Thu 21:58 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Esercitazione per Ergon Research</title>
+<meta name="author" content="Giovanni Mu" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Esercitazione per Ergon Research</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org6bcffac">1. <code>config/</code></a>
+<ul>
+<li><a href="#org643456f">1.1. SecurityConfig</a></li>
+<li><a href="#org0ad75e8">1.2. DataLoader</a></li>
+</ul>
+</li>
+<li><a href="#org01b9ba8">2. <code>entity/</code> Schema Entità-Relazione\</a>
+<ul>
+<li><a href="#org6f5b8a5">2.1. Dettaglio Entità</a></li>
+<li><a href="#orga7d1aa1">2.2. Note di Implementazione</a></li>
+<li><a href="#org68f5c93">2.3. Regole API (riepilogo)</a></li>
+</ul>
+</li>
+<li><a href="#orgfe660f2">3. <code>repository/</code> JPA</a></li>
+<li><a href="#orga4c7238">4. <code>service/</code> - Logica dell'applicazione</a></li>
+<li><a href="#org8f73af7">5. <code>controller/</code></a></li>
+<li><a href="#org2534ad0">6. <code>dto/</code></a>
+<ul>
+<li><a href="#org070ae00">6.1. <code>AddAssigneeRequest</code></a></li>
+<li><a href="#orgd82673c">6.2. AddCommentRequest</a></li>
+<li><a href="#org8ab8be5">6.3. ChangeStatusRequest</a></li>
+<li><a href="#orgfb650e6">6.4. CommentDto</a></li>
+<li><a href="#org8deb7b5">6.5. CreateTaskRequest</a></li>
+<li><a href="#org8c12661">6.6. LogWorkRequest</a></li>
+<li><a href="#org8cf0fe4">6.7. TaskDetailDto</a></li>
+<li><a href="#orgb084526">6.8. TaskSummaryDto</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+<b>Schema del progetto</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nil">activity-tracker/
+├── pom.xml
+├── src/main/java/com/example/activitytracker/
+│   ├── ActivityTrackerApplication.java
+│   ├── config/
+│   │   ├── SecurityConfig.java
+|   |   └── DataLoader.java
+│   ├── entity/
+│   │   ├── User.java
+│   │   ├── Task.java
+│   │   ├── TaskAssignee.java
+│   │   ├── WorkLog.java
+│   │   ├── Comment.java
+│   │   └── TaskStatus.java  (enum: BACKLOG, IN_PROGRESS, COMPLETED; con colore associato)
+│   ├── repository/
+│   │   ├── UserRepository.java
+│   │   ├── TaskRepository.java
+│   │   ├── WorkLogRepository.java
+│   │   └── CommentRepository.java
+│   ├── service/
+│   │   └── TaskService.java
+│   ├── controller/
+│   │   └── TaskController.java
+│   └── dto/
+│       ├── TaskSummaryDto.java
+│       ├── TaskDetailDto.java
+│       ├── CommentDto.java
+│       ├── CreateTaskRequest.java
+│       ├── ChangeStatusRequest.java
+│       ├── AddAssigneeRequest.java
+│       ├── LogWorkRequest.java
+│       └── AddCommentRequest.java
+└── src/main/resources/
+    ├── application.properties
+    └── data.sql (dati di test)
+</pre>
+</div>
+
+<p>
+I test per le API RESTful si possono trovare nella cartella <code>tests/</code>, c'è uno script python e una collezione postman che fanno praticamente la stessa cosa.
+</p>
+<div id="outline-container-org6bcffac" class="outline-2">
+<h2 id="org6bcffac"><span class="section-number-2">1.</span> <code>config/</code></h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org643456f" class="outline-3">
+<h3 id="org643456f"><span class="section-number-3">1.1.</span> SecurityConfig</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+<b>Responsabilità:</b> gestire la sicurezza dell’applicazione (autenticazione e autorizzazione).
+</p>
+
+<p>
+<b>Cosa fa:</b>
+</p>
+
+<ul class="org-ul">
+<li>Disabilita CSRF – non necessario per API REST stateless.</li>
+
+<li>Sessioni stateless – nessuna sessione lato server; ogni richiesta deve portare le credenziali (HTTP Basic). Questo soddisfa il requisito “chiudi il browser e riapri, devi rifare login”.</li>
+
+<li><b>Autorizzazione:</b>
+
+<ul class="org-ul">
+<li>Consente l’accesso libero alla console H2 (/h2-console/**) senza autenticazione.</li>
+
+<li>Richiede autenticazione per tutte le altre richieste (le API).</li>
+</ul></li>
+
+<li><b>Autenticazione HTTP Basic</b> – le credenziali (username e password) vengono inviate nell’header <code>Authorization</code> .</li>
+
+<li><b>Header frame</b> <code>SAMEORIGIN</code> – necessario per visualizzare la console H2 nei frame.</li>
+
+<li><b>Definisce</b> un <code>PasswordEncoder</code> con algoritmo BCrypt.</li>
+
+<li><b>Definisce</b> un <code>UserDetailsService</code> che cerca gli utenti nel database usando <code>UserRepository</code> .</li>
+</ul>
+
+<p>
+<b>Riassunto:</b>
+La console H2 è pubblica, le API sono protette da login obbligatorio a ogni richiesta (nessuna sessione), le password sono codificate con BCrypt e gli utenti vengono caricati da DB.
+</p>
+</div>
+</div>
+<div id="outline-container-org0ad75e8" class="outline-3">
+<h3 id="org0ad75e8"><span class="section-number-3">1.2.</span> DataLoader</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+<b>Responsabilità:</b> inserire dati di test nel database all’avvio dell’applicazione, <b>solo se il database è vuoto.</b>
+</p>
+
+<p>
+Cosa fa:
+</p>
+
+<ul class="org-ul">
+<li>Controlla se l’utente mario esiste già; se sì, non fa nulla (evita duplicati).</li>
+
+<li>Crea due utenti (mario e anna) con password codificate da BCrypt.</li>
+
+<li>Crea tre task in diversi stati, assegnandoli ai rispettivi creatori (e anche ad altri).
+
+<ul class="org-ul">
+<li>Utilizza un salvataggio in due passi per gestire correttamente la tabella associativa <code>task_assignees</code>.</li>
+</ul></li>
+
+<li>Inserisce alcune ore lavorate (<code>work_logs</code>) e commenti di esempio.</li>
+
+<li>Stampa messaggi di log sulla console per confermare l’avvenuto inserimento.</li>
+</ul>
+
+<p>
+<b>Riassunto:</b>
+Popola il database H2 con dati predefiniti in modo automatico e sicuro, rendendo l’applicazione immediatamente testabile senza bisogno di script SQL esterni.
+</p>
+
+<p>
+In breve:
+</p>
+
+<ul class="org-ul">
+<li><code>SecurityConfig</code> = imposta le regole di accesso (chi può vedere cosa).</li>
+
+<li><code>DataLoader</code> = prepara i dati iniziali per provare l’app.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org01b9ba8" class="outline-2">
+<h2 id="org01b9ba8"><span class="section-number-2">2.</span> <code>entity/</code> Schema Entità-Relazione\</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Il diagramma rappresenta la struttura del database.
+</p>
+
+
+<div id="org6b4f0b4" class="figure">
+<p><img src="db-schema.png" alt="db-schema.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-org6f5b8a5" class="outline-3">
+<h3 id="org6f5b8a5"><span class="section-number-3">2.1.</span> Dettaglio Entità</h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+<div id="outline-container-org51c54b6" class="outline-4">
+<h4 id="org51c54b6"><span class="section-number-4">2.1.1.</span> users</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<ul class="org-ul">
+<li><b>id</b> : Long, chiave primaria auto‑generata.</li>
+<li><b>username</b> : String, univoco, obbligatorio.</li>
+<li><b>password</b> : String, in chiaro solo per prototipo (in produzione va codificata).</li>
+<li><b>fullName</b> : String, nome esteso dell'utente.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8b0ddc7" class="outline-4">
+<h4 id="org8b0ddc7"><span class="section-number-4">2.1.2.</span> tasks</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<ul class="org-ul">
+<li><b>id</b> : Long, PK.</li>
+<li><b>title</b> : String, titolo dell'attività.</li>
+<li><b>description</b> : String, descrizione dettagliata.</li>
+<li><b>status</b> : Enum (BACKLOG, IN<sub>PROGRESS</sub>, COMPLETED), colore gestito lato frontend.</li>
+<li><b>createdAt</b> : LocalDateTime, data di creazione.</li>
+<li><b>createdBy</b> : FK verso users (autore dell'attività).</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org83bd37c" class="outline-4">
+<h4 id="org83bd37c"><span class="section-number-4">2.1.3.</span> <code>task_assignees</code></h4>
+<div class="outline-text-4" id="text-2-1-3">
+<ul class="org-ul">
+<li>Tabella di join per la relazione molti‑a‑molti tra tasks e users.</li>
+<li><b><code>task_id</code></b> : FK verso tasks, parte della PK composita.</li>
+<li><b><code>user_id</code></b> : FK verso users, parte della PK composita.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgad60e4c" class="outline-4">
+<h4 id="orgad60e4c"><span class="section-number-4">2.1.4.</span> <code>work_logs</code></h4>
+<div class="outline-text-4" id="text-2-1-4">
+<ul class="org-ul">
+<li><b>id</b> : Long, PK.</li>
+<li><b>hours</b> : Double, ore lavorate in questa registrazione.</li>
+<li><b>loggedAt</b> : LocalDateTime, momento della registrazione.</li>
+<li><b><code>task_id</code></b> : FK verso tasks.</li>
+<li><b><code>user_id</code></b> : FK verso users (chi ha lavorato).</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org13e87f7" class="outline-4">
+<h4 id="org13e87f7"><span class="section-number-4">2.1.5.</span> comments</h4>
+<div class="outline-text-4" id="text-2-1-5">
+<ul class="org-ul">
+<li><b>id</b> : Long, PK.</li>
+<li><b>text</b> : String (max 1000), contenuto del commento.</li>
+<li><b>createdAt</b> : LocalDateTime.</li>
+<li><b><code>task_id</code></b> : FK verso tasks.</li>
+<li><b><code>user_id</code></b> : FK verso users (autore del commento).</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orga7d1aa1" class="outline-3">
+<h3 id="orga7d1aa1"><span class="section-number-3">2.2.</span> Note di Implementazione</h3>
+<div class="outline-text-3" id="text-2-2">
+<ol class="org-ol">
+<li>I commenti sono ordinati per `createdAt DESC` per rispettare la specifica (dal più recente al più vecchio).</li>
+<li>Il totale ore su un task si calcola come <code>`SUM(work_logs.hours)`</code> di tutte le righe associate.</li>
+<li><p>
+Le transizioni di stato consentite sono:
+</p>
+<ul class="org-ul">
+<li><code>BACKLOG</code> → <code>IN_PROGRESS</code></li>
+<li><code>IN_PROGRESS</code> → <code>COMPLETED</code></li>
+<li><code>COMPLETED</code> → <code>IN_PROGRESS</code></li>
+</ul>
+<p>
+Ogni altra transizione viene respinta con errore 400.
+</p></li>
+<li>Spring Data JPA gestirà le relazioni attraverso le annotazioni `@ManyToOne`, `@ManyToMany` e `@OneToMany`.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org68f5c93" class="outline-3">
+<h3 id="org68f5c93"><span class="section-number-3">2.3.</span> Regole API (riepilogo)</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>GET /api/tasks/my?status=&#x2026;   → task dell'utente corrente per stato.</li>
+<li>GET /api/tasks/{id}           → dettaglio (con commenti, ore totali, assegnatari).</li>
+<li>POST /api/tasks               → crea task in BACKLOG (assegnato al creatore).</li>
+<li>PUT /api/tasks/{id}/status    → cambia stato.</li>
+<li>POST /api/tasks/{id}/assignees → aggiunge un utente all'attività.</li>
+<li>POST /api/tasks/{id}/worklogs → registra ore lavorate.</li>
+<li>POST /api/tasks/{id}/comments → aggiunge un commento.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfe660f2" class="outline-2">
+<h2 id="orgfe660f2"><span class="section-number-2">3.</span> <code>repository/</code> JPA</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Le interfacce nel package <code>repository</code> estendono JpaRepository, che fornisce automaticamente i metodi CRUD di base (salva, trova per ID, elimina, ecc.).
+In più, ogni repository dichiara metodi personalizzati per soddisfare i requisiti dell’applicazione.
+</p>
+
+<p>
+<code>UserRepository</code>
+</p>
+
+<ul class="org-ul">
+<li><b>Metodo standard:</b> <code>findByUsername(String username)</code></li>
+
+<li><b>Cosa fa:</b> restituisce un utente cercandolo esattamente per il campo <code>username</code> (univoco).</li>
+
+<li><b>Utilizzo:</b> durante l’autenticazione (<code>UserDetailsService</code>) e nel controller per ottenere l’utente corrente dalle API.</li>
+</ul>
+
+<p>
+<code>WorkLogRepository</code>
+</p>
+
+<ul class="org-ul">
+<li><code>getTotalHoursByTask(taskId)</code>
+→ calcola la <b>somma delle ore</b> registrate su un task (da qualsiasi utente).</li>
+
+<li><b>Particolarità:</b> usa <code>COALESCE(SUM(...), 0)</code> per restituire 0 se non ci sono ore, evitando valori nulli.</li>
+
+<li><b>Utilizzo:</b> per mostrare il totale ore nel dettaglio del task.</li>
+</ul>
+
+<p>
+<code>CommentRepository</code>
+</p>
+
+<ul class="org-ul">
+<li><code>findByTaskIdOrderByCreatedAtDesc(taskId)</code>
+→ restituisce tutti i commenti di un task <b>ordinati dal più recente al più vecchio.</b></li>
+
+<li>Utilizzo: per visualizzare i commenti nell’ordine richiesto (requisito funzionale).</li>
+</ul>
+
+<p>
+<b>In sintesi:</b> queste interfacce traducono le esigenze applicative (filtri per stato, totali ore, ordinamento commenti) in query sul database, sfruttando la potenza di Spring Data JPA senza scrivere codice boilerplate
+</p>
+
+<p>
+<code>TaskRepository</code>
+</p>
+
+<ul class="org-ul">
+<li><code>findByAssigneeAndStatus(userId, status)</code>
+→ recupera i task assegnati a un certo utente e con un determinato stato (es. <code>BACKLOG</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>).</li>
+
+<li><code>findByAssignee(userId)</code>
+→ recupera tutti i task assegnati a un utente, indipendentemente dallo stato.</li>
+
+<li>Come: query JPQL che fanno JOIN con la tabella <code>task_assignees</code> per filtrare per assegnatario.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga4c7238" class="outline-2">
+<h2 id="orga4c7238"><span class="section-number-2">4.</span> <code>service/</code> - Logica dell'applicazione</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Il <code>TaskService</code> è <b>il cuore dell’applicazione:</b> contiene tutte le operazioni relative ai task, coordina i repository JPA e applica le regole funzionali richieste.
+🔧 <b>Operazioni di scrittura (modifica dati)</b>
+</p>
+
+<ul class="org-ul">
+<li><code>createTask</code> – Crea un nuovo task in stato <code>BACKLOG</code> , lo salva e lo assegna automaticamente al creatore.</li>
+<li><p>
+<code>changeStatus</code> – Cambia lo stato di un task <b>rispettando le transizioni consentite:</b>
+</p>
+
+<ul class="org-ul">
+<li><code>BACKLOG</code> → <code>IN_PROGRESS</code></li>
+
+<li><code>IN_PROGRESS</code> → <code>COMPLETED</code></li>
+
+<li><code>COMPLETED</code> → <code>IN_PROGRESS</code></li>
+
+<li>Mai verso <code>BACKLOG</code>.</li>
+</ul>
+<p>
+Lancia eccezioni (<code>IllegalStateException</code>) per transizioni non valide.
+</p>
+
+<ul class="org-ul">
+<li><code>assignUserToTask</code> – Assegna un utente a un task (due versioni: con ID e con oggetti). Evita assegnazioni duplicate.</li>
+
+<li><code>logWork</code> – Registra le ore lavorate da un utente su un task (salva un <code>WorkLog</code> ).</li>
+
+<li><code>addComment</code> – Aggiunge un commento a un task e lo restituisce.</li>
+</ul></li>
+</ul>
+
+<p>
+📖 <b>Operazioni di lettura (solo query)</b>
+</p>
+
+<ul class="org-ul">
+<li><code>getTasksForUserByStatus</code> – Restituisce i task assegnati a un utente, eventualmente filtrati per stato.</li>
+
+<li><code>getTaskDetail</code> – Restituisce il dettaglio completo di un task: ore totali (da <code>WorkLogRepository</code> ), commenti ordinati dal più recente, elenco assegnatari.</li>
+</ul>
+
+<p>
+🧩 <b>Mapping verso DTO</b>
+</p>
+
+<ul class="org-ul">
+<li><code>toSummary</code> – Converte un’entità <code>Task</code> in <code>TaskSummaryDto</code> (id, titolo, stato, colore, totale ore, nomi assegnatari).</li>
+
+<li><code>toDetail</code> – Estende il riepilogo con descrizione, creatore e lista di <code>CommentDto</code> .</li>
+</ul>
+
+<p>
+⚙️ Caratteristiche tecniche
+</p>
+
+<ul class="org-ul">
+<li>Classe annotata con <code>@Service</code> e <code>@Transactional</code> : tutte le operazioni di scrittura sono transazionali; le letture sono esplicitamente <code>readOnly = true</code> .</li>
+
+<li>Iniezione delle dipendenze via costruttore (tutti i repository necessari).</li>
+</ul>
+
+<p>
+Delega la persistenza ai repository JPA, concentrandosi sulla logica applicativa.
+</p>
+
+<p>
+<b>In sintesi:</b> il <code>TaskService</code> implementa tutti i requisiti funzionali del progetto (creazione, cambio stato, assegnazione, ore, commenti, visualizzazioni filtrate) mantenendo le regole di business e isolando il controller dai dettagli di persistenza.Il TaskService è il cuore dell’applicazione: contiene tutte le operazioni relative ai task, coordina i repository JPA e applica le regole funzionali richieste.
+</p>
+</div>
+</div>
+<div id="outline-container-org8f73af7" class="outline-2">
+<h2 id="org8f73af7"><span class="section-number-2">5.</span> <code>controller/</code></h2>
+<div class="outline-text-2" id="text-5">
+<p>
+<code>TaskController</code>
+</p>
+
+<p>
+<b>Responsabilità:</b> esporre i servizi RESTful per la gestione dei task, facendo da tramite tra le richieste HTTP e la logica di business ( <code>TaskService</code> ).
+</p>
+
+<p>
+<b>Endpoint e funzioni</b>
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Metodo</td>
+<td class="org-left">URL</td>
+<td class="org-left">Funzione</td>
+</tr>
+
+<tr>
+<td class="org-left">GET</td>
+<td class="org-left"><code>/api/tasks</code></td>
+<td class="org-left">Lista task dell'utente autenticato, eventualmente filtrati per stato (BACKLOG, IN<sub>PROGRESS</sub>, COMPLETED)</td>
+</tr>
+
+<tr>
+<td class="org-left">GET</td>
+<td class="org-left"><code>/api/tasks/{id}</code></td>
+<td class="org-left">Dettaglio completo di un task (commenti, ore totali, assegnatari)</td>
+</tr>
+
+<tr>
+<td class="org-left">POST</td>
+<td class="org-left"><code>/api/tasks</code></td>
+<td class="org-left">Crea un nuovo task (automaticamente in BACKLOG e assegnato al creatore). Restituisce 201 Created</td>
+</tr>
+
+<tr>
+<td class="org-left">PUT</td>
+<td class="org-left"><code>/api/tasks/{id}/status</code></td>
+<td class="org-left">Cambia lo stato di un task (validato dal service)</td>
+</tr>
+
+<tr>
+<td class="org-left">POST</td>
+<td class="org-left"><code>/api/tasks/{id}/assignees</code></td>
+<td class="org-left">Assegna un altro utente al task</td>
+</tr>
+
+<tr>
+<td class="org-left">POST</td>
+<td class="org-left"><code>/api/tasks/{id}/worklogs</code></td>
+<td class="org-left">Registra ore lavorate dall'utente autenticato</td>
+</tr>
+
+<tr>
+<td class="org-left">POST</td>
+<td class="org-left"><code>/api/tasks/{id}/comments</code></td>
+<td class="org-left">Aggiunge un commento (visualizzati dal più recente)</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<b>Metodo di supporto</b>
+</p>
+
+<ul class="org-ul">
+<li><code>getCurrentUser</code> : estrae l'utente dal contesto di sicurezza (Authentication), recuperandolo dal database tramite username. Lancia eccezione se non trovato.</li>
+</ul>
+
+<p>
+<b>Caratteristiche</b>
+</p>
+
+<ul class="org-ul">
+<li>Iniezione delle dipendenze via costruttore.</li>
+
+<li>Tutte le operazioni di modifica richiedono autenticazione.</li>
+
+<li>Il controller è "leggero": tutta la logica di business è delegata al TaskService.</li>
+
+<li>Le risposte usano i DTO (TaskSummaryDto, TaskDetailDto) per separare il modello interno dalla rappresentazione esterna.</li>
+</ul>
+
+<p>
+<b>In sintesi:</b> il controller è il punto di ingresso per tutte le operazioni richieste dai requisiti funzionali, garantendo che solo utenti autenticati possano operare e che i dati restituiti siano sempre filtrati e strutturati.
+</p>
+</div>
+</div>
+<div id="outline-container-org2534ad0" class="outline-2">
+<h2 id="org2534ad0"><span class="section-number-2">6.</span> <code>dto/</code></h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-org070ae00" class="outline-3">
+<h3 id="org070ae00"><span class="section-number-3">6.1.</span> <code>AddAssigneeRequest</code></h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li><b>Tipo:</b> DTO di richiesta (input).</li>
+<li><b>Campi:</b> userId (Long).</li>
+<li><b>Scopo:</b> Viene utilizzato quando il client invia una richiesta per <b>aggiungere un assegnatario</b> a un task.</li>
+</ul>
+
+<p>
+Esempio di JSON inviato dal frontend:
+</p>
+<div class="org-src-container">
+<pre class="src src-json">{ "userId": 2 }
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Utilizzo nel controller: <code>POST /api/tasks/{id}/assignees</code> – il corpo viene deserializzato in un oggetto <code>AddAssigneeRequest</code>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd82673c" class="outline-3">
+<h3 id="orgd82673c"><span class="section-number-3">6.2.</span> AddCommentRequest</h3>
+<div class="outline-text-3" id="text-6-2">
+<ul class="org-ul">
+<li><b>Tipo:</b> DTO di richiesta.</li>
+<li><b>Campi:</b> text (String).</li>
+<li><b>Scopo:</b> Contiene il testo di un nuovo commento da aggiungere a un task.
+Esempio di JSON:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-json">{ "text": "Aggiornamento importante" }
+</pre>
+</div>
+
+<ul class="org-ul">
+<li><b>Utilizzo:</b> <code>POST /api/tasks/{id}/comments</code> .</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8ab8be5" class="outline-3">
+<h3 id="org8ab8be5"><span class="section-number-3">6.3.</span> ChangeStatusRequest</h3>
+<div class="outline-text-3" id="text-6-3">
+<ul class="org-ul">
+<li><b>Tipo:</b> DTO di richiesta.</li>
+<li><b>Campi:</b> <code>status</code> (tipo <code>TaskStatus</code> , un enum con valori <code>BACKLOG</code>, <code>IN_PROGRESS</code>, COMPLETED).</li>
+<li><b>Scopo:</b> Specifica il nuovo stato a cui portare un task. Spring converte automaticamente la stringa JSON nell'enum corrispondente.
+Esempio:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-json">{ "status": "IN_PROGRESS" }
+</pre>
+</div>
+
+<ul class="org-ul">
+<li><b>Utilizzo:</b> <code>PUT /api/tasks/{id}/status</code> .</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfb650e6" class="outline-3">
+<h3 id="orgfb650e6"><span class="section-number-3">6.4.</span> CommentDto</h3>
+<div class="outline-text-3" id="text-6-4">
+<ul class="org-ul">
+<li><b>Tipo:</b> DTO di risposta (output).</li>
+<li><b>Campi:</b> <code>id</code>, <code>text</code>, <code>authorUsername</code>, <code>createdAt</code> (LocalDateTime).</li>
+<li><b>Scopo:</b> Rappresenta un commento da restituire al client. Viene costruito nel <code>TaskService</code> a partire dall'entità <code>Comment</code>. Mostra il nome utente dell'autore (non l'ID) e la data di creazione.</li>
+<li><b>Utilizzo:</b> Incluso nella lista di commenti di <code>TaskDetailDto</code>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8deb7b5" class="outline-3">
+<h3 id="org8deb7b5"><span class="section-number-3">6.5.</span> CreateTaskRequest</h3>
+<div class="outline-text-3" id="text-6-5">
+<ul class="org-ul">
+<li><b>Tipo:</b> DTO di richiesta.</li>
+<li><b>Campi:</b> <code>title</code>, <code>description</code> (entrambi String).</li>
+<li><b>Scopo:</b> Trasporta i dati necessari per creare un nuovo task. Il creatore e lo stato (BACKLOG) vengono impostati automaticamente dal backend.</li>
+<li><b>Utilizzo:</b> <code>POST /api/tasks</code>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8c12661" class="outline-3">
+<h3 id="org8c12661"><span class="section-number-3">6.6.</span> LogWorkRequest</h3>
+<div class="outline-text-3" id="text-6-6">
+<ul class="org-ul">
+<li><b>Tipo:</b> DTO di richiesta.</li>
+<li><b>Campi:</b> <code>hours</code> (Double).</li>
+<li><b>Scopo:</b> Contiene il numero di ore da registrare su un task.</li>
+<li><b>Utilizzo:</b> <code>POST /api/tasks/{id}/worklogs</code>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8cf0fe4" class="outline-3">
+<h3 id="org8cf0fe4"><span class="section-number-3">6.7.</span> TaskDetailDto</h3>
+<div class="outline-text-3" id="text-6-7">
+<ul class="org-ul">
+<li><b>Tipo:</b> DTO di risposta (output).</li>
+<li><b>Estende:</b> <code>TaskSummaryDto</code>.</li>
+<li><b>Campi aggiuntivi:</b> <code>description</code>, <code>createdByUsername</code>, <code>comments</code> (lista di <code>CommentDto</code>).</li>
+<li><b>Scopo:</b> Fornisce tutti i dettagli di un singolo task, compresi i commenti e il nome del creatore.</li>
+<li><b>Costruzione:</b> Nel service, dopo aver recuperato l'entità <code>Task</code>, il totale ore e i commenti ordinati, viene creato un <code>TaskDetailDto</code> passando tutti i valori al costruttore.</li>
+<li><b>Utilizzo:</b> <code>GET /api/tasks/{id}</code>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb084526" class="outline-3">
+<h3 id="orgb084526"><span class="section-number-3">6.8.</span> TaskSummaryDto</h3>
+<div class="outline-text-3" id="text-6-8">
+<ul class="org-ul">
+<li><b>Tipo:</b> DTO di risposta (output).</li>
+<li><b>Campi:</b> <code>id</code>, <code>title</code>, <code>status</code>, <code>statusColor</code>, <code>totalHours</code>, <code>assigneeNames</code> (lista di stringhe).</li>
+<li><b>Scopo:</b> Rappresenta un riepilogo leggero di un task, usato per popolare elenchi (ad esempio la lista dei task filtrati per stato). Include già il colore dello stato (per eventuale UI) e la somma delle ore lavorate.</li>
+<li><b>Utilizzo:</b> <code>GET /api/tasks</code> e come base per <code>TaskDetailDto</code>.</li>
+</ul>
+
+<p>
+<b>Perché usare i DTO?</b>
+</p>
+
+<ul class="org-ul">
+<li><b>Disaccoppiamento:</b> Le entità JPA non vengono mai esposte direttamente; eventuali modifiche al modello interno non rompono le API.</li>
+<li><b>Sicurezza:</b> Si possono omettere campi sensibili (es. password).</li>
+<li><b>Personalizzazione:</b> I dati vengono formattati in modo adatto al frontend (es. colore dello stato, nome utente invece di ID).</li>
+<li><b>Validazione implicita:</b> I DTO di richiesta definiscono esattamente cosa il client deve inviare.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Giovanni Mu</p>
+<p class="date">Created: 2026-06-04 Thu 21:58</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
